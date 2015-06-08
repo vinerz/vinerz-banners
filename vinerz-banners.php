@@ -38,7 +38,7 @@ if( !class_exists('VBanners') ) {
                     'show_ui' => true,
                     'has_archive' => false,
                     'menu_position' => 5,
-                    'menu_icon' => '',
+                    'menu_icon' => 'dashicons-images-alt2',
                     'with_front' => true,
                     'supports' =>	array( 'title', 'author' ),
                     'taxonomies' => array(),
