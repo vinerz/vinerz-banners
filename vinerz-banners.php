@@ -127,7 +127,7 @@ if( !class_exists('VBanners') ) {
                     'desc'   => get_post_meta( $banner->ID, '_vin_description', true ),
                     'link'   => get_post_meta( $banner->ID, '_vin_link', true ),
                     'target' => get_post_meta( $banner->ID, '_vin_target', true )
-                )
+                );
             }
             
             return $result;
