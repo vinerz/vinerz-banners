@@ -65,7 +65,7 @@ if( !class_exists('VBanners') ) {
             
             $meta_boxes['banners_editor'] = array(
                 'id'         => $prefix . 'banners_editor',
-                'title'      => 'Painel de edição de Banner',
+                'title'      => 'Painel de ediÃ§Ã£o de Banner',
                 'pages'      => array( 'banner' ),
                 'priority'   => 'high',
                 'fields'     => array(
@@ -76,9 +76,9 @@ if( !class_exists('VBanners') ) {
                         'description' => 'Escolha a imagem do Banner.'
                     ),
                     array(
-                        'name' => 'Descrição',
-                        'description' => 'Escreva a descrição do banner',
-                        'id'   => $prefix . 'descricao',
+                        'name' => 'DescriÃ§Ã£o',
+                        'description' => 'Escreva a descriÃ§Ã£o do banner',
+                        'id'   => $prefix . 'description',
                         'type' => 'wysiwyg',
                         'options' => array( 'textarea_rows' => 3 )
                     ),
@@ -86,7 +86,18 @@ if( !class_exists('VBanners') ) {
                         'name' => 'Link',
                         'id'   => $prefix . 'link',
                         'type' => 'text'
-                    )
+                    ),
+                    array(
+                        'name'    => 'Target',
+                        'id'      => $prefix . 'target',
+                        'type'    => 'radio',
+                        'options' => array(
+                            '_blank' => '_blank',
+                            '_self' => '_self',
+                            '_parent' => '_parent',
+                            '_top' => '_top'
+                        ),
+                    ),
                 )
             );
 
@@ -106,7 +117,20 @@ if( !class_exists('VBanners') ) {
             
             $query = new WP_Query( $args );
             
-            return $query->posts;
+            $banners = $query->posts;
+            $result = array();
+            
+            foreach( $banners as $banner ) {
+                $result[] = array(
+                    'title'  => $banner->post_title,
+                    'image'  => get_post_meta( $banner->ID, '_vin_cover', true ),
+                    'desc'   => get_post_meta( $banner->ID, '_vin_description', true ),
+                    'link'   => get_post_meta( $banner->ID, '_vin_link', true ),
+                    'target' => get_post_meta( $banner->ID, '_vin_target', true )
+                )
+            }
+            
+            return $result;
         }
     }
 }
