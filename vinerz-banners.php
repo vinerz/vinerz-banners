@@ -112,7 +112,7 @@ if( !class_exists('VBanners') ) {
             
             $query = new WP_Query( $args );
             
-            return $query;
+            return $query->posts;
         }
     }
 }
