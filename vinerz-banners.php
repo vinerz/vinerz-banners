@@ -40,9 +40,8 @@ if( !class_exists('VBanners') ) {
                     'menu_position' => 5,
                     'menu_icon' => '',
                     'with_front' => true,
-                    'rewrite' => array('slug' => 'lista'),
                     'supports' =>	array( 'title', 'author' ),
-                    'taxonomies' => array('post_tag'),
+                    'taxonomies' => array(),
                     'labels' => array(
                         'name' => 'Banners',
                         'singular_name' => 'Banner',
