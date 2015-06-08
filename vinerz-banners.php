@@ -75,11 +75,6 @@ if( !class_exists('VBanners') ) {
                         'type' => 'file',
                         'description' => 'Escolha a imagem do Banner.'
                     ),
-            array(
-                        'name' => 'Título',
-                        'id'   => $prefix . 'titulo',
-                        'type' => 'text'
-                    ),
                     array(
                         'name' => 'Descrição',
                         'description' => 'Escreva a descrição do banner',
