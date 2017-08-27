@@ -1,6 +1,6 @@
 # VBanners
 
-Sistema simples de banners
+Sistema simples de banners para WordPress.
 
 ### Uso
 
@@ -12,4 +12,4 @@ foreach($banners as $banner) {
 }
 ```
 
-By VinerzZ
+Copyright (c) 2015 Vinicius Tavares
